@@ -2,21 +2,17 @@ package com.demo.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+
 @Entity
-public class User {
+public class Income {
+
 	@Id
-	@GeneratedValue
 	private Integer id;
 	
-	@Column(unique=true,nullable=false)
-	private String email;
-	
 	@Column(nullable=false)
-	private String password;
+	private String category;
+	
 
+	
 }
-
-
-

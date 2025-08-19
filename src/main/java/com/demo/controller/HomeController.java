@@ -11,17 +11,14 @@ import com.demo.model.User;
 
 @RestController
 
-@CrossOrigin(origins = "http://localhost:3000") 
+@CrossOrigin(origins = "http://localhost:5173") 
 public class HomeController {
 
-    @RequestMapping(value = "/{path:[^\\.]*}")
-    public String redirect() {
-        return "forward:/index.html";
-    }
+
     
     
     
-    @PostMapping("login")
+    @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody User name ){
     	
     	System.out.println(name);

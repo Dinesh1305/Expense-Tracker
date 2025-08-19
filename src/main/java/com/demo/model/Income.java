@@ -3,6 +3,7 @@ package com.demo.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Income {
@@ -30,5 +31,9 @@ public class Income {
 	}
 	
 	
+	
+	
+	@ManyToOne
+	private User user;
 	
 }

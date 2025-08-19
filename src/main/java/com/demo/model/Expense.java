@@ -3,6 +3,7 @@ package com.demo.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Expense {
@@ -28,6 +29,10 @@ public class Expense {
 	public void setCategory(String category) {
 		this.category = category;
 	}
+	
+	
+	@ManyToOne 
+	private User user;
 	
 	
 	

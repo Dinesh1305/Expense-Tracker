@@ -1,9 +1,12 @@
 package com.demo.model;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 @Entity
 public class User {
 	@Id
@@ -40,9 +43,18 @@ public class User {
 		this.password = password;
 	}
 	
+	@OneToMany
+	private List<Income> income;
 	
 	
-	
+	@OneToMany
+	private List<Expense> expense;
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", email=" + email + ", password=" + password + ", income=" + income + ", expense="
+				+ expense + "]";
+	}
 	
 }
 

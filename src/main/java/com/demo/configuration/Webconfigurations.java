@@ -13,7 +13,7 @@ public class Webconfigurations {
 	        @Override
 	        public void addCorsMappings(org.springframework.web.servlet.config.annotation.CorsRegistry registry) {
 	            registry.addMapping("/**")
-	                    .allowedOrigins("http://localhost:5173")
+	                    .allowedOrigins("http://localhost:5174")
 	                    .allowedMethods("*");
 	        }
 	    };

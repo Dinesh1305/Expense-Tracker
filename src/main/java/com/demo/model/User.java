@@ -17,6 +17,12 @@ public class User {
 	@Column(unique=true,nullable=false)
 	private String email;
 	
+	public User(String email, String password) {
+		super();
+		this.email = email;
+		this.password = password;
+	}
+
 	@Column(nullable=false)
 	private String password;
 

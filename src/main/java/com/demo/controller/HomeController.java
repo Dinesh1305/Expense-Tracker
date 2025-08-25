@@ -3,18 +3,24 @@ package com.demo.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.demo.Service.UserService;
+import com.demo.model.User;
 import com.demo.model.User1;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5173") 
 public class HomeController {
 
+	@Autowired
+	UserService service;
+	
     @PostMapping("/login2")
     public ResponseEntity<?> login(@RequestBody User1 user) {
         System.out.println("Login attempt: " + user);
@@ -31,4 +37,22 @@ public class HomeController {
             return ResponseEntity.status(401).body(response);
         }
     }
+    
+    @PostMapping("/signup")
+    public ResponseEntity<?> sign (@RequestBody User1 user)
+    {
+    	String email=user.getEmail();
+    	String password=user.getPassword();
+    	
+    	User temp=new User(email,password);
+    	
+    	service.add(temp);
+    	Map<String,Object>map=new HashMap<>();
+    	map.put("message", "sign successfully");
+    	return ResponseEntity.ok(map);
+    	
+    }
+    
+    
+    
 }

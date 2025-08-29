@@ -39,7 +39,7 @@ public class HomeController {
     }
     
     @PostMapping("/signup")
-    public ResponseEntity<?> sign (@RequestBody User1 user)
+    public ResponseEntity<?> signup (@RequestBody User1 user)
     {
     	String email=user.getEmail();
     	String password=user.getPassword();
